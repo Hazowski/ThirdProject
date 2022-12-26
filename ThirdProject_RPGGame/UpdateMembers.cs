@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ThirdProject_RPGGame
+﻿namespace ThirdProject_RPGGame
 {
 
     public class UpdateTeamMember
@@ -14,13 +8,14 @@ namespace ThirdProject_RPGGame
             Name = name;
             HealthPoints = healthPoints;
         }
+        public UpdateTeamMember(string name)
+        {
+            Name = name;
+        }
 
         public string Name { get; }
         public int HealthPoints { get; }
     }
-
-
-
 
     public class UpdateWarrior : UpdateTeamMember
     {
@@ -29,19 +24,16 @@ namespace ThirdProject_RPGGame
 
     }
 
-
-
-
-
     public class UpdateMage : UpdateTeamMember
     {
+        public int MagePoints { get; }
         public UpdateMage(string name, int healthPoints, int magePoints) : base(name, healthPoints)
         {
             MagePoints = magePoints;
-        } 
-        
+        }
 
-        public int MagePoints { get; }
+
+        
 
 
 

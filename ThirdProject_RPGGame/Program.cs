@@ -1,64 +1,22 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using ThirdProject_RPGGame;
 
-
-/*List<Warrior> warr = new List<Warrior>();
-for (int i = 0; i < 4; i++)
-{
-    Warrior firstWarrior = new();
-
-    warr.Add(firstWarrior);
-    Console.WriteLine(firstWarrior.ToString());
-
-}
-List<Mage> mage = new List<Mage>();
-for (int i = 0; i < 4; i++)
-{
-    Mage firstMage = new();
-
-    mage.Add(firstMage);
-   
-    Console.WriteLine(firstMage.ToString());
-
-}
-*/
 List<CombatTeam> teams = new List<CombatTeam>();
-CombatTeam team1 = new CombatTeam("Druzyna");
+CombatTeam team1 = new CombatTeam("First Heroes Team");
 
-List<CombatClass> classes = new List<CombatClass>();
-CombatClass member1 = new Mage("Jozio", 50, 5);
-CombatClass member2 = new Warrior("Zenek", 96);
+List<CombatClass> classes = new();
+CombatClass member1 = new Mage("John", 50, 5);
+CombatClass member2 = new Warrior("Andrew", 96);
 
 team1.AddToTeam(member1);
 team1.AddToTeam(member2);
 
-member1.UpdateTeamMember(new UpdateMage("Stefan",5,30));
-member2.UpdateTeamMember(new UpdateWarrior("Wojo", 5));
-
 teams.Add(team1);
 
 
-
-
-
-
-Console.WriteLine(team1.TeamName.ToString());
-Console.WriteLine(team1.CombatMember[0].PowerLevel());
-Console.WriteLine(team1.CombatMember[1].PowerLevel());
-Console.WriteLine(team1.SummTeamPower());
-Console.WriteLine(team1.CombatMember.FirstOrDefault().AddOrDeductHp(11));
+member1.UpdateTeamMember(new UpdateMage(member1.GetName(), member1.GetHealthPoints(), 3));
 
 Console.WriteLine(team1.ToString());
-
-
-
-//warr = warr.OrderBy(x => x.Strenght).ToList();
-
-//foreach (var item in warr)
-//{
-//    Console.WriteLine(item.ToString()); 
-//}
-
 
 
 /*
